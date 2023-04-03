@@ -1,0 +1,51 @@
+{
+  "name": "rollup-plugin-ternary-replacement",
+  "version": "0.0.1",
+  "description": "Plugin that replaces non-null merge and logical assignments with ternary operators",
+  "keywords": [
+    "rollup",
+    "plugin",
+    "ternary",
+    "operator",
+    "replace",
+    "assignments"
+  ],
+  "typings": "dist/types/index.d.ts",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/umd.js",
+  "module": "dist/esm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danyaridiger/rollup-plugin-ternary-replacement"
+  },
+  "author": "Ridiger Daniil Dmitrievich <extendedmultiselect@yandex.ru>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "test:unit": "jest",
+    "lint": "npx eslint ."
+  },
+  "dependencies": {
+    "@rollup/pluginutils": "^5.0.2",
+    "acorn": "^8.8.2",
+    "acorn-jsx": "^5.3.2",
+    "babel-preset-env": "^1.7.0",
+    "escodegen": "^2.0.0",
+    "estree-visitor": "^1.0.8",
+    "magic-string": "^0.30.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/plugin-transform-arrow-functions": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "babel-jest": "^29.5.0",
+    "eslint": "^8.36.0",
+    "rollup": "^3.20.2",
+    "rollup-plugin-dts": "^5.3.0",
+    "ts-jest": "^29.0.5"
+  }
+}

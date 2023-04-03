@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rollup-plugin-ternary-replacement correctly excludes files from transform 1`] = `
+"/**
+ * Function that imitates module behavior for tests.
+ * @function
+ * @returns {number} - result
+ */
+const testFunction = () => {
+  let testVariable1 = 100;
+  let testVariable2 = 110;
+  
+  testVariable1 = testVariable2;
+
+  return testVariable1;
+};
+
+export { testFunction as default };
+
+/**
+ * Function that imitates module behavior for tests.
+ * Can be excluded from conversion using "exclude" option.
+ * @function
+ * @returns {number} - result
+ */
+const testFunction = () => {
+  let testVariable1 = 100;
+  let testVariable2 = 110;
+  
+  testVariable1 = testVariable1 ?? testVariable2;
+
+  return testVariable1;
+};
+
+export { testFunction as default };
+"
+`;
+
+exports[`rollup-plugin-ternary-replacement correctly excludes files from transform by extentions 1`] = `
+"/**
+ * Function that imitates module behavior for tests.
+ * @function
+ * @returns {number} - result
+ */
+const testFunction = () => {
+  let testVariable1 = 100;
+  let testVariable2 = 110;
+  let testVariable3 = 120;
+  let testVariable4 = 130;
+  let testVariable5 = 140;
+  
+  testVariable1 = testVariable2;
+  testVariable2 &&= testVariable3;
+  testVariable3 ||= testVariable4;
+  testVariable4 ??= testVariable5;
+
+  return testVariable1;
+};
+
+export { testFunction as default };
+
+/**
+ * Function that imitates module behavior for tests.
+ * Can be excluded from conversion using "exclude" option.
+ * @function
+ * @returns {number} - result
+ */
+const testFunction = () => {
+  let testVariable1 = 100;
+  let testVariable2 = 110;
+  
+  testVariable1 = testVariable1 ?? testVariable2;
+
+  return testVariable1;
+};
+
+export { testFunction as default };
+"
+`;
+
+exports[`rollup-plugin-ternary-replacement correctly transforms all given nodes 1`] = `
+"/**
+ * Function that imitates module behavior for tests.
+ * @function
+ * @returns {number} - result
+ */
+const testFunction = () => {
+  let testVariable1 = 100;
+  let testVariable2 = 110;
+  
+  testVariable1 = testVariable2;
+
+  return testVariable1;
+};
+
+export { testFunction as default };
+
+/**
+ * Function that imitates module behavior for tests.
+ * Can be excluded from conversion using "exclude" option.
+ * @function
+ * @returns {number} - result
+ */
+const testFunction = () => {
+  let testVariable1 = 100;
+  let testVariable2 = 110;
+  
+  testVariable1 = testVariable1 !== null && testVariable1 !== undefined ? testVariable1 : testVariable2;
+
+  return testVariable1;
+};
+
+export { testFunction as default };
+"
+`;
+
+exports[`rollup-plugin-ternary-replacement correctly transforms only logical assignments 1`] = `
+"/**
+ * Function that imitates module behavior for tests.
+ * @function
+ * @returns {number} - result
+ */
+const testFunction = () => {
+  let testVariable1 = 100;
+  let testVariable2 = 110;
+  
+  testVariable1 = testVariable2;
+
+  return testVariable1;
+};
+
+export { testFunction as default };
+
+/**
+ * Function that imitates module behavior for tests.
+ * Can be excluded from conversion using "exclude" option.
+ * @function
+ * @returns {number} - result
+ */
+const testFunction = () => {
+  let testVariable1 = 100;
+  let testVariable2 = 110;
+  
+  testVariable1 = testVariable1 ?? testVariable2;
+
+  return testVariable1;
+};
+
+export { testFunction as default };
+"
+`;
+
+exports[`rollup-plugin-ternary-replacement correctly transforms only non null merges 1`] = `
+"/**
+ * Function that imitates module behavior for tests.
+ * @function
+ * @returns {number} - result
+ */
+const testFunction = () => {
+  let testVariable1 = 100;
+  let testVariable2 = 110;
+  let testVariable3 = 120;
+  let testVariable4 = 130;
+  let testVariable5 = 140;
+  
+  testVariable1 = testVariable2;
+  testVariable2 &&= testVariable3;
+  testVariable3 ||= testVariable4;
+  testVariable4 ??= testVariable5;
+
+  return testVariable1;
+};
+
+export { testFunction as default };
+
+/**
+ * Function that imitates module behavior for tests.
+ * Can be excluded from conversion using "exclude" option.
+ * @function
+ * @returns {number} - result
+ */
+const testFunction = () => {
+  let testVariable1 = 100;
+  let testVariable2 = 110;
+  
+  testVariable1 = testVariable1 !== null && testVariable1 !== undefined ? testVariable1 : testVariable2;
+
+  return testVariable1;
+};
+
+export { testFunction as default };
+"
+`;

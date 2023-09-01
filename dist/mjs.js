@@ -129,7 +129,7 @@ class RollupPluginTernaryReplacementError extends Error {}
  * @function
  * @param {Options} [options = {}] - plugin options
  * @returns {Transform} transformation
- * @version 0.0.1
+ * @version 0.0.2
  */
 module.exports = function rollupPluginTernaryReplacement(options = {}) {
   const exclude = options.exclude ? options.exclude.map(function (path) {

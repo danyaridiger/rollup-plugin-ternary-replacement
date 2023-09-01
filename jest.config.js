@@ -40,7 +40,7 @@ module.exports = {
     ".*.[m]?js": "babel-jest",
   },
   transformIgnorePatterns: [
-    "<rootDir>/node_modules/escodegen"
+    "package.json"
   ],
   fakeTimers: {
     legacyFakeTimers: true,

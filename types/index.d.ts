@@ -32,3 +32,5 @@ export interface PluginTransformResult {
 declare function rollupPluginTernaryReplacement(
   options: PluginOptions
 ): PluginTransform;
+
+export default rollupPluginTernaryReplacement;

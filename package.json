@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-ternary-replacement",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Plugin that replaces non-null merge and logical assignments with ternary operators",
   "keywords": [
     "rollup",

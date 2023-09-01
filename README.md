@@ -1,4 +1,4 @@
-# rollup-plugin-ternary-replacement v0.0.1
+# rollup-plugin-ternary-replacement v0.0.2
 
 ***
 

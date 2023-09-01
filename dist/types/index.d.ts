@@ -26,4 +26,11 @@ interface PluginTransformResult {
   map?: SourceMap;
 }
 
-export { PluginOptions, PluginTransform, PluginTransformResult };
+/**
+ * Root type
+ */
+declare function rollupPluginTernaryReplacement(
+  options: PluginOptions
+): PluginTransform;
+
+export { PluginOptions, PluginTransform, PluginTransformResult, rollupPluginTernaryReplacement as default };

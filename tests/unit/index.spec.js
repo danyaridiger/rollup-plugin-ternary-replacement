@@ -7,13 +7,11 @@ describe("rollup-plugin-ternary-replacement", () => {
     expect(dist).toMatchSnapshot();
   });
 
-
   it("correctly excludes files from transform", async () => {
     const dist = await createOutput({ exclude: ["exclude"] });
 
     expect(dist).toMatchSnapshot();
   });
-
 
   it("correctly excludes files from transform by extentions", async () => {
     const dist = await createOutput({ excludeExtentions: ["js"] });
@@ -21,13 +19,17 @@ describe("rollup-plugin-ternary-replacement", () => {
     expect(dist).toMatchSnapshot();
   });
 
+  it("correctly creates source map for output", async () => {
+    const dist = await createOutput({ includeSourceMap: true });
+
+    expect(dist).toMatchSnapshot();
+  });
 
   it("correctly transforms only non null merges", async () => {
     const dist = await createOutput({ nonNullMergesOnly: true });
 
     expect(dist).toMatchSnapshot();
   });
-  
 
   it("correctly transforms only logical assignments", async () => {
     const dist = await createOutput({ assignmentsOnly: true });

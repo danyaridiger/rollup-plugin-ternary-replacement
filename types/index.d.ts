@@ -1,4 +1,4 @@
-import { SourceMap } from "magic-string";
+import type { SourceMap } from "magic-string";
 
 /**
  * Plugin options
@@ -29,8 +29,6 @@ export interface PluginTransformResult {
 /**
  * Root type
  */
-declare function rollupPluginTernaryReplacement(
-  options: PluginOptions
-): PluginTransform;
+declare function rollupPluginTernaryReplacement(options: PluginOptions): PluginTransform;
 
 export default rollupPluginTernaryReplacement;

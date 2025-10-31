@@ -1,0 +1,26 @@
+{
+  "name": "rollup-plugin-ternary-replacement",
+  "files": [
+    {
+      "path": "./dist/index.cjs.js",
+      "maxSize": "3 kB"
+    },
+    {
+      "path": "./dist/index.esm.js",
+      "maxSize": "3 kB"
+    },
+    {
+      "path": "./dist/index.umd.js",
+      "maxSize": "3 kB"
+    }
+  ],
+  "compression": "gzip",
+  "normalization": {
+    "path": ["./dist/"],
+    "stripHash": true
+  },
+  "settings": {
+    "enableMarkdownReport": false,
+    "failOnMissingFiles": false
+  }
+}

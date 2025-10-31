@@ -16,8 +16,8 @@ export default {
   allowReserved: true,
   allowImportExportEverywhere: true,
   allowHashBang: true,
-  ecmaVersion: 13,
-  sourceType: 'module',
+  ecmaVersion: "latest",
+  sourceType: "module",
   plugins: {
     jsx: true,
   },

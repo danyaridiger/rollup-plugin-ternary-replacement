@@ -29,8 +29,7 @@ interface PluginTransformResult {
 /**
  * Root type
  */
-declare function rollupPluginTernaryReplacement(
-  options: PluginOptions
-): PluginTransform;
+declare function rollupPluginTernaryReplacement(options: PluginOptions): PluginTransform;
 
-export { PluginOptions, PluginTransform, PluginTransformResult, rollupPluginTernaryReplacement as default };
+export { rollupPluginTernaryReplacement as default };
+export type { PluginOptions, PluginTransform, PluginTransformResult };

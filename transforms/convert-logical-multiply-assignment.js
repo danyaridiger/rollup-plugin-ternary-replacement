@@ -3,7 +3,7 @@ import JSXParser from "../modules/jsx-parser";
 import parserOptions from "../modules/parser-options";
 
 /**
- * Transforms given code replacing logical 
+ * Transforms given code replacing logical
  * assignments with ternary operators
  * @function
  * @param {Node} fragment - code fragment to search in
@@ -13,7 +13,6 @@ import parserOptions from "../modules/parser-options";
 export default function convertLogicalAssignment(fragment, additionAssignment = false) {
   const identifier = fragment.left.raw || fragment.left.name;
   const appropriator = fragment.right.raw || fragment.right.name;
-
   let finalString = `${identifier} ? ${identifier} = ${appropriator} : false`;
 
   finalString = additionAssignment ? finalString : `!${finalString}`;

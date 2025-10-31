@@ -35,16 +35,18 @@ import RollupPlaginTernaryReplacementError from "./modules/RollupPluginTernaryRe
  * @function
  * @param {Options} [options = {}] - plugin options
  * @returns {Transform} transformation
- * @version 0.0.2
+ * @version 1.0.0
  */
 module.exports = function rollupPluginTernaryReplacement(options = {}) {
-  const exclude = options.exclude ? options.exclude.map((path) => new RegExp(path, "i")) : [];
+  const exclude = options.exclude
+    ? options.exclude.map((path) => new RegExp(path, "si"))
+    : [];
   const include = createFilter([], exclude);
   const excludeExtentions = options.excludeExtentions || [];
   const includeSourceMap = options.includeSourceMap;
   const nonNullMergesOnly = options.nonNullMergesOnly;
   const assignmentsOnly = options.assignmentsOnly;
-  
+
   return {
     /**
      * Transforms given code fragment from each file
@@ -62,8 +64,10 @@ module.exports = function rollupPluginTernaryReplacement(options = {}) {
 
       try {
         node = JSXParser.parse(code, parserOptions);
-      } catch(error) {
-        throw new RollupPlaginTernaryReplacementError(`${error.message} — thrown in ${path}`);
+      } catch (error) {
+        throw new RollupPlaginTernaryReplacementError(
+          `${error.message} — thrown in ${path}`,
+        );
       }
 
       const magicString = new MagicString(code);
@@ -72,7 +76,7 @@ module.exports = function rollupPluginTernaryReplacement(options = {}) {
         /**
          * Replaces given nodes with new ones if necessary
          * @method
-         * @param {Node} fragment 
+         * @param {Node} fragment - code fragment
          * @returns {MagicString} node
          */
         enter: (fragment) => {
@@ -109,5 +113,5 @@ module.exports = function rollupPluginTernaryReplacement(options = {}) {
         map: includeSourceMap ? magicString.generateMap() : null,
       };
     },
-  }
-}
+  };
+};

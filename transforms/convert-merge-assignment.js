@@ -3,7 +3,7 @@ import JSXParser from "../modules/jsx-parser";
 import parserOptions from "../modules/parser-options";
 
 /**
- * Transforms given code replacing non-null 
+ * Transforms given code replacing non-null
  * merge assignments with ternary operators
  * @function
  * @param {Node} fragment - code fragment to search in
@@ -16,7 +16,6 @@ export default function convertMergeAssignment(fragment) {
     ${identifier} !== null && ${identifier} !== undefined 
      ? ${identifier} = ${appropriator} 
      : false`;
-
   const fragmentToReplace = JSXParser.parse(finalString, parserOptions);
   const expression = fragmentToReplace.body[0].expression;
   const newFragment = escodegen.generate(expression);
